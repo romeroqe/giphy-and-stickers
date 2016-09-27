@@ -10,5 +10,12 @@
             "email": "romeroqe.93@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Romeroqe\\Ghipy\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "~5"
+    }
 }

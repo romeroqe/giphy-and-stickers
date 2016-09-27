@@ -1,0 +1,14 @@
+{
+    "name": "romeroqe/ghipy",
+    "description": "A package that provides an interface between Laravel and Giphy API.",
+    "keywords": ["Laravel", "PHP", "Ghipy", "API"],
+    "version": "0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emmanuel Romero",
+            "email": "romeroqe.93@gmail.com"
+        }
+    ],
+    "require": {}
+}

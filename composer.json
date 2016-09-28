@@ -4,8 +4,6 @@
     "keywords": ["Laravel", "PHP", "Ghipy", "API"],
     "version": "0",
     "license": "MIT",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "authors": [
         {
             "name": "Emmanuel Romero",
@@ -19,5 +17,12 @@
     },
     "require": {
         "illuminate/support": "~5"
-    }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

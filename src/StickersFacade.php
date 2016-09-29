@@ -1,12 +1,12 @@
 <?php
 
-namespace Romeroqe\Ghipy;
+namespace Romeroqe\Giphy;
 
 use Illuminate\Support\Facades\Facade;
 
-class GhipyFacade extends Facade
+class StickersFacade extends Facade
 {
    	protected static function getFacadeAccessor() { 
-        return 'romeroqe-ghipy';
+        return 'romeroqe-stickers';
     }
 }

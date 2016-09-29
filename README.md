@@ -39,6 +39,7 @@ This package also ships with a facade which provides the static syntax. You can 
 	'Giphy' => Romeroqe\Giphy\GiphyFacade::class,
 	'Stickers' => Romeroqe\Giphy\StickersFacade::class,
 ]
+```
 
 ## Quick Examples
 

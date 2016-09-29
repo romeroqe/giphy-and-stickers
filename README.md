@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/romeroqe/giphy-and-stickers/v/stable)](https://packagist.org/packages/romeroqe/giphy-and-stickers) [![Total Downloads](https://poser.pugx.org/romeroqe/giphy-and-stickers/downloads)](https://packagist.org/packages/romeroqe/giphy-and-stickers) [![Latest Unstable Version](https://poser.pugx.org/romeroqe/giphy-and-stickers/v/unstable)](https://packagist.org/packages/romeroqe/giphy-and-stickers) [![License](https://poser.pugx.org/romeroqe/giphy-and-stickers/license)](https://packagist.org/packages/romeroqe/giphy-and-stickers)
 
-A package that provides an interface between Laravel and Giphy API, includes Gifs and Stickers.
+A package that provides an interface between [Laravel](https://laravel.com/docs/5.3/) and [Giphy API](https://github.com/giphy/GiphyAPI), includes Gifs and Stickers.
 
 ## Installation
 - [Giphy and Stickers on Packagist](https://packagist.org/packages/romeroqe/giphy-and-stickers)
@@ -39,3 +39,8 @@ This package also ships with a facade which provides the static syntax. You can 
 	'Giphy' => Romeroqe\Giphy\GiphyFacade::class,
 	'Stickers' => Romeroqe\Giphy\StickersFacade::class,
 ]
+
+## Quick Examples
+
+You can see [the documentation](https://github.com/giphy/GiphyAPI) for more information.
+

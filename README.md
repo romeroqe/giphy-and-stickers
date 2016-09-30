@@ -53,6 +53,21 @@ You can see [the documentation](https://github.com/giphy/GiphyAPI#giphy-api-docu
 + rating - (optional) limit results to those rated (y,g, pg, pg-13 or r).
 + lang - (optional) specify default country for regional content; format is 2-letter ISO 639-1 country code. See list of supported langauges [here](https://github.com/Giphy/GiphyAPI#language-support)
 
+## Endpoints
+
++ [Gifs](#gifs)
+	+ [Search](#search)
+	+ [Translate](#translate)
+	+ [Trending](#trending)
+	+ [Random](#random)
+	+ [By id](#by-id)
+	+ [By id](#by-ids)
++ [Stickers](#stickers)
+	+ [Sticker Search](#sticker-search)
+	+ [Sticker Translate](#sticker-translate)
+	+ [Sticker Trending](#sticker-trending)
+	+ [Sticker Random](#sticker-random)
+
 ### Gifs
 
 #### Search
@@ -307,22 +322,22 @@ You can do a `dd($giphys)` to see all attributes:
 
 ### Stickers
 
-#### Search
+#### Sticker Search
 ```php
 
 ```
 
-#### Translate
+#### Sticker Translate
 ```php
 
 ```
 
-#### Trending
+#### Sticker Trending
 ```php
 
 ```
 
-#### Random 
+#### Sticker Random 
 ```php
 
 ```

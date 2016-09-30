@@ -53,7 +53,7 @@ You can see [the documentation](https://github.com/giphy/GiphyAPI#giphy-api-docu
 + rating - (optional) limit results to those rated (y,g, pg, pg-13 or r).
 + lang - (optional) specify default country for regional content; format is 2-letter ISO 639-1 country code. See list of supported langauges [here](https://github.com/Giphy/GiphyAPI#language-support)
 
-## Endpoints
+### Endpoints
 
 + [Gifs](#gifs)
 	+ [Search](#search)
@@ -153,14 +153,6 @@ You can do a `dd($giphy)` to see all attributes:
         +"webp_size": "756840"
       }
       ...
-    }
-  }
-  +"meta": {#183 ▼
-    +"status": 200
-    +"msg": "OK"
-    +"response_id": "57edadf527142d6a63efc287"
-  }
-}
 ```
 
 #### Trending
@@ -322,22 +314,92 @@ You can do a `dd($giphys)` to see all attributes:
 
 ### Stickers
 
-#### Sticker Search
-```php
+The methods of Stickers are similar to the methods Giphy, so I will omit the examples of `dd()`, but also you can use it to view all the attributes of objects.
 
+#### Sticker Search
+
+Search all Sticker for a word or phrase. Punctuation will be stripped and ignored. On this case, `$stickers` is an array.
+
+Method: Stickers::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null) 
+
+```php
+$stickers = Stickers::search('dog');
+
+foreach ($stickers->data as $sticker) {
+    // Get id
+	$sticker->id;
+
+	// Get image original url
+	$sticker->images->original->url;
+
+	// Get image original mp4 url
+	$sticker->images->original->mp4;
+
+	//etc
+}
 ```
 
 #### Sticker Translate
-```php
 
+The translate API draws on search, but uses the Stickers "special sauce" to handle translating from one vocabulary to another.
+
+Method: Stickers::translate($query, $rating = null, $lang = null)
+
+```php
+$sticker= Stickers::translate('cat');
+
+// Get id
+$sticker->data->id;
+
+// Get image original url
+$sticker->data->images->original->url;
+
+// Get image original mp4 url
+$sticker->data->images->original->mp4;
+
+//etc
 ```
 
 #### Sticker Trending
-```php
 
+Fetch Stickers currently trending online. On this case, `$stickers` is an array.
+
+Method: Stickers::trending($limit = 25, $rating = null)
+
+```php
+$stickers = Stickers::trending();
+
+foreach ($stickers->data as $sticker) {
+    // Get id
+	$sticker->id;
+
+	// Get image original url
+	$sticker->images->original->url;
+
+	// Get image original mp4 url
+	$sticker->images->original->mp4;
+
+	//etc
+}
 ```
 
 #### Sticker Random 
-```php
 
+Returns a random Sticker, limited by tag.
+
+Method: Stickers::random($query, $rating = null)
+
+```php
+$sticker = Stickers::random('cat');
+
+// Get id
+$sticker->data->id;
+
+// Get image original url
+$sticker->data->image_original_url;
+
+// Get image mp4 url
+$sticker->data->image_mp4_url;
+
+//etc
 ```

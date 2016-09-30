@@ -98,6 +98,7 @@ You can do a `dd($giphys)` to see all attributes:
 #### Translate
 
 The translate API draws on search, but uses the Giphy "special sauce" to handle translating from one vocabulary to another.
+
 Method: Giphy::translate($query, $rating = null, $lang = null)
 
 ```php
@@ -149,7 +150,8 @@ You can do a `dd($giphy)` to see all attributes:
 
 #### Trending
 
-Fetch GIFs currently trending online. On this case, $giphys is an array.
+Fetch GIFs currently trending online. On this case, `$giphys` is an array.
+
 Method: Giphy::trending($limit = 25, $rating = null)
 
 ```php
@@ -189,6 +191,7 @@ You can do a `dd($giphys)` to see all attributes:
 #### Random
 
 Returns a random GIF, limited by tag.
+
 Method: Giphy::random($query, $rating = null)
 
 ```php
@@ -227,6 +230,7 @@ You can do a `dd($giphy)` to see all attributes:
 #### By ID 
 
 Returns meta data about a GIF, by GIF id.
+
 Method: Giphy::getByID($id)
 
 ```php
@@ -262,7 +266,8 @@ You can do a `dd($giphy)` to see all attributes:
 
 #### By IDs 
 
-A multiget version of the get GIF by ID endpoint. 
+A multiget version of the get GIF by ID endpoint. On this case, `$giphys` is an array.
+
 Method: Giphy::getByIDs(array $ids)
 
 ```php

@@ -57,8 +57,8 @@ You can see [the documentation](https://github.com/giphy/GiphyAPI#giphy-api-docu
 
 #### Search
 
-Giphy::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null) 
-On this case, $giphys is an array.
+Search all Giphy GIFs for a word or phrase. Punctuation will be stripped and ignored. On this case, $giphys is an array.
+Method: Giphy::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null) 
 
 ```php
 $giphys = Giphy::search('cat');
@@ -96,10 +96,11 @@ You can do a `dd($giphys)` to see all attributes:
 
 #### Translate
 
-translate($query, $rating = null, $lang = null)
+The translate API draws on search, but uses the Giphy "special sauce" to handle translating from one vocabulary to another.
+Method: Giphy::translate($query, $rating = null, $lang = null)
 
 ```php
-$giphys= Giphy::translate('cat');
+$giphy= Giphy::translate('cat');
 
 // Get id
 $giphy->data->id;
@@ -147,15 +148,47 @@ You can do a `dd($giphy)` to see all attributes:
 
 #### Trending
 
-trending($limit = 25, $rating = null)
+Fetch GIFs currently trending online. On this case, $giphys is an array.
+Method: Giphy::trending($limit = 25, $rating = null)
 
 ```php
+$giphys = Giphy::trending();
 
+foreach ($giphys->data as $giphy) {
+    // Get id
+	$giphy->id;
+
+	// Get image original url
+	$giphy->images->original->url;
+
+	// Get image original mp4 url
+	$giphy->images->original->mp4;
+
+	//etc
+}
+```
+
+You can do a `dd($giphys)` to see all attributes:
+
+```php
+{#162 ▼
+  +"data": array:25 [▼
+    0 => {#163 ▼
+      +"type": "gif"
+      +"id": "l2SqiAELInKQ8rF0Q"
+      +"slug": "2dopequeens-podcast-2-dope-queens-l2SqiAELInKQ8rF0Q"
+      +"url": "http://giphy.com/gifs/2dopequeens-podcast-2-dope-queens-l2SqiAELInKQ8rF0Q"
+      ...
+    }
+    1 => {#183 ▶}
+    2 => {#203 ▶}
+    ...
 ```
 
 #### Random
 
-Giphy::random($query, $rating = null)
+Returns a random GIF, limited by tag.
+Method: Giphy::random($query, $rating = null)
 
 ```php
 $giphy = Giphy::random('cat');
@@ -192,18 +225,78 @@ You can do a `dd($giphy)` to see all attributes:
 
 #### By ID 
 
-getByID($id)
+Returns meta data about a GIF, by GIF id.
+Method: Giphy::getByID($id)
 
 ```php
+$giphy= Giphy::getByID('qbpRDgYI5JoKk');
 
+// Get id
+$giphy->data->id;
+
+// Get image original url
+$giphy->data->images->original->url;
+
+// Get image original mp4 url
+$giphy->data->images->original->mp4;
+
+//etc
+```
+
+You can do a `dd($giphy)` to see all attributes:
+
+```php
+{#162 ▼
+  +"data": {#163 ▼
+    +"type": "gif"
+    +"id": "qbpRDgYI5JoKk"
+    ...
+    +"images": {#164 ▼
+      ...
+      +"original": {#179 ▼
+        +"url": "https://media1.giphy.com/media/qbpRDgYI5JoKk/giphy.gif"
+        +"width": "500"
+        ...
 ```
 
 #### By IDs 
 
-getByIDs(array $ids)
+A multiget version of the get GIF by ID endpoint. 
+Method: Giphy::getByIDs(array $ids)
 
 ```php
+$giphys = Giphy::getByIDs(['qbpRDgYI5JoKk','FiGiRei2ICzzG']);
 
+foreach ($giphys->data as $giphy) {
+    // Get id
+	$giphy->id;
+
+	// Get image original url
+	$giphy->images->original->url;
+
+	// Get image original mp4 url
+	$giphy->images->original->mp4;
+
+	//etc
+}
+```
+
+You can do a `dd($giphys)` to see all attributes:
+
+```php
+{#162 ▼
+  +"data": array:2 [▼
+    0 => {#163 ▼
+      +"type": "gif"
+      +"id": "qbpRDgYI5JoKk"
+      +"slug": "cat-qbpRDgYI5JoKk"
+      ...
+    }
+    1 => {#182 ▼
+      +"type": "gif"
+      +"id": "FiGiRei2ICzzG"
+      +"slug": "funny-cat-FiGiRei2ICzzG"
+      ...
 ```
 
 ### Stickers

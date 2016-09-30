@@ -57,7 +57,8 @@ You can see [the documentation](https://github.com/giphy/GiphyAPI#giphy-api-docu
 
 #### Search
 
-Search all Giphy GIFs for a word or phrase. Punctuation will be stripped and ignored. On this case, $giphys is an array.
+Search all Giphy GIFs for a word or phrase. Punctuation will be stripped and ignored. On this case, `$giphys` is an array.
+
 Method: Giphy::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null) 
 
 ```php

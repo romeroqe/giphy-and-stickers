@@ -57,10 +57,41 @@ You can see [the documentation](https://github.com/giphy/GiphyAPI#giphy-api-docu
 
 #### Search
 
-Giphy::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null)
+Giphy::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null) 
+On this case, $giphys is an array.
 
 ```php
+$giphys = Giphy::search('cat');
 
+foreach ($giphys->data as $giphy) {
+    // Get id
+	$giphy->id;
+
+	// Get image original url
+	$giphy->images->original->url;
+
+	// Get image original mp4 url
+	$giphy->images->original->mp4;
+
+	//etc
+}
+```
+
+You can do a `dd($giphys)` to see all attributes:
+
+```php
+{#162 ▼
+  +"data": array:25 [▼
+    0 => {#163 ▼
+      +"type": "gif"
+      +"id": "W80Y9y1XwiL84"
+      +"slug": "gift-W80Y9y1XwiL84"
+      +"url": "http://giphy.com/gifs/gift-W80Y9y1XwiL84"
+      ...
+    }
+    1 => {#182 ▶}
+    2 => {#202 ▶}
+    ...
 ```
 
 #### Translate
@@ -68,7 +99,50 @@ Giphy::search($query, $limit = 25, $offset = 0, $rating = null, $lang = null)
 translate($query, $rating = null, $lang = null)
 
 ```php
+$giphys= Giphy::translate('cat');
 
+// Get id
+$giphy->data->id;
+
+// Get image original url
+$giphy->data->images->original->url;
+
+// Get image original mp4 url
+$giphy->data->images->original->mp4;
+
+//etc
+```
+
+You can do a `dd($giphy)` to see all attributes:
+
+```php
+{#162 ▼
+  +"data": {#163 ▼
+    +"type": "gif"
+    +"id": "3oz8xQQP4ahKiyuxHy"
+    ...
+    +"images": {#165 ▼
+      ...
+      +"original": {#180 ▼
+        +"url": "http://media3.giphy.com/media/3oz8xQQP4ahKiyuxHy/giphy.gif"
+        +"width": "480"
+        +"height": "352"
+        +"size": "3795005"
+        +"frames": "33"
+        +"mp4": "http://media3.giphy.com/media/3oz8xQQP4ahKiyuxHy/giphy.mp4"
+        +"mp4_size": "132229"
+        +"webp": "http://media3.giphy.com/media/3oz8xQQP4ahKiyuxHy/giphy.webp"
+        +"webp_size": "756840"
+      }
+      ...
+    }
+  }
+  +"meta": {#183 ▼
+    +"status": 200
+    +"msg": "OK"
+    +"response_id": "57edadf527142d6a63efc287"
+  }
+}
 ```
 
 #### Trending
@@ -98,7 +172,7 @@ $giphy->data->image_mp4_url;
 //etc
 ```
 
-You can do a `dd($giphy);` to see all attributes:
+You can do a `dd($giphy)` to see all attributes:
 
 ```php
 {#162 ▼
@@ -107,27 +181,7 @@ You can do a `dd($giphy);` to see all attributes:
     +"id": "qbpRDgYI5JoKk"
     +"url": "http://giphy.com/gifs/cat-qbpRDgYI5JoKk"
     +"image_original_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/giphy.gif"
-    +"image_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/giphy.gif"
-    +"image_mp4_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/giphy.mp4"
-    +"image_frames": "4"
-    +"image_width": "500"
-    +"image_height": "375"
-    +"fixed_height_downsampled_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/200_d.gif"
-    +"fixed_height_downsampled_width": "267"
-    +"fixed_height_downsampled_height": "200"
-    +"fixed_width_downsampled_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/200w_d.gif"
-    +"fixed_width_downsampled_width": "200"
-    +"fixed_width_downsampled_height": "150"
-    +"fixed_height_small_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/100.gif"
-    +"fixed_height_small_still_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/100_s.gif"
-    +"fixed_height_small_width": "133"
-    +"fixed_height_small_height": "100"
-    +"fixed_width_small_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/100w.gif"
-    +"fixed_width_small_still_url": "https://media0.giphy.com/media/qbpRDgYI5JoKk/100w_s.gif"
-    +"fixed_width_small_width": "100"
-    +"fixed_width_small_height": "75"
-    +"username": ""
-    +"caption": ""
+    ...
   }
   +"meta": {#164 ▼
     +"status": 200

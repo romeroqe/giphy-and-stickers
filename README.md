@@ -10,10 +10,19 @@ A package that provides an interface between [Laravel](https://laravel.com/docs/
 
 ### Composer
 
-From the command line run:
+First, pull in the package through Composer.
+
+``` php
+“require”: {
+    ...
+    "romeroqe/giphy-and-stickers": "dev-master”
+}
+```
+
+And run composer:
 
 ```
-$ composer require romeroqe/giphy-and-stickers
+$ composer update
 ```
 
 ### Provider

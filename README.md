@@ -15,7 +15,7 @@ First, pull in the package through Composer.
 ``` php
 “require”: {
     ...
-    "romeroqe/giphy-and-stickers": "dev-master”
+    "romeroqe/giphy-and-stickers": "dev-master"
 }
 ```
 

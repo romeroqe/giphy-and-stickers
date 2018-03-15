@@ -56,7 +56,7 @@ class Request
     }
 
     static public function getByIDs($type, $ids){
-        $endpoint = '/v1/'.$type;
+        $endpoint = 'v1/'.$type;
         $params = [
             'ids' => implode(',', $ids)
         ];
